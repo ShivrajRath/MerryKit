@@ -26,7 +26,10 @@ var config = require('./app/config/app.json')[app.get('env')];
 Mongoose ORM to connect to mongo db
 *****************************************************************************/
 
-mongoose.connect(config.mongooseHost);
+var mongoURI = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL || config.mongooseHost;
+
+mongoose.connect(mongoURI);
 
 /******************************************************************************
 Passport for route authentication
