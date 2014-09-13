@@ -16,11 +16,25 @@ module.exports = function(router, passport) {
         next();
     });
 
-    router.get('/login', function(req, res) {
-        res.render('common/views/seller/login', {
-            title: 'Login'
+    // Home page for the seller
+    router.get('/', function(req, res) {
+        res.render('common/views/seller/home', {
+            title: 'Seller'
         });
     });
+
+    router.route('/login')
+        .get(function(req, res) {
+            res.render('common/views/seller/login', {
+                title: 'Login'
+            })
+        })
+        .post(passport.authenticate('local-login', {
+            successRedirect: '/seller/profile', // redirect to the secure profile section
+            failureRedirect: '/seller/signup', // redirect back to the signup page if there is an error
+            failureFlash: true // allow flash messages
+        }))
+
 
     router.route('/signup')
         .get(function(req, res) {
@@ -36,8 +50,10 @@ module.exports = function(router, passport) {
 
 
     router.get('/profile', isLoggedIn, function(req, res) {
+
         res.render('common/views/seller/profile', {
-            title: 'Seller Profile'
+            title: 'Seller Profile',
+            user: req.user
         });
     });
 
@@ -50,8 +66,6 @@ module.exports = function(router, passport) {
 
 // route middleware to make sure
 function isLoggedIn(req, res, next) {
-
-    console.log("In isLogin");
 
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated()) {

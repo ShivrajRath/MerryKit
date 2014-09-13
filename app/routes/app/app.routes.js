@@ -22,10 +22,4 @@ module.exports = function(router) {
         });
     });
 
-    // Home page for the seller
-    router.get('/seller', function(req, res) {
-        res.render('common/views/seller/home', {
-            title: 'Seller'
-        });
-    });
 }

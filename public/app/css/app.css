@@ -18,6 +18,8 @@
  * Wrappers.............Wrapping and constraining elements.
  *
  * COMPONENTS
+ * HTML, BODY...........Customization on HTML and Body
+ * Wrapper..............The container wrapper.
  * Page-head............The main page header.
  * Page-foot............The main page footer.
  * Buttons..............Button elements.
@@ -58,4 +60,22 @@
 
 .f5f5f5{
 	background-color: #f5f5f5;
+}
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+/*********** Sticky footer ************/
+html,body{
+	height: 100%;
+}
+
+/*********** Sticky footer ************/
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+	padding: 0 0 60px;
 }

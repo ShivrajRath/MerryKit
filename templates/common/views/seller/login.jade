@@ -1,22 +1,22 @@
-extends ../layout
+extends layout
 
 block content
 	.container
 		.row
 			.col-lg-8.col-lg-offset-2
 				.well
-					form.form-horizontal
+					form.form-horizontal(action='/seller/login', method='POST')
 						fieldset
 							legend Seller Login
 							.form-group
 								label.col-lg-2.control-label(for='selleremail') Email
 								.col-lg-10
-									input#selleremail.form-control(type='text', placeholder='Email', autocomplete='off')
+									input#selleremail.form-control(type='text', name='selleremail' placeholder='Email', autocomplete='off')
 							.form-group
 								label.col-lg-2.control-label(for='sellerpassword') Password
 								.col-lg-10
-									input#sellerpassword.form-control(type='password', placeholder='Password', autocomplete='off')
+									input#sellerpassword.form-control(type='password', name='sellerpassword' placeholder='Password', autocomplete='off')
 							.form-group
 								.col-lg-10.col-lg-offset-2
 									.btn.btn-default.mr-10 Cancel
-									.btn.btn-primary(type=submit) Submit
+									input.btn.btn-primary(type='submit', value='Submit')
