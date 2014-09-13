@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-lg-8.col-lg-offset-2
+				.well
+					form.form-horizontal
+						fieldset
+							legend Seller Login
+							.form-group
+								label.col-lg-2.control-label(for='selleremail') Email
+								.col-lg-10
+									input#selleremail.form-control(type='text', placeholder='Email', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='sellerpassword') Password
+								.col-lg-10
+									input#sellerpassword.form-control(type='password', placeholder='Password', autocomplete='off')
+							.form-group
+								.col-lg-10.col-lg-offset-2
+									.btn.btn-default.mr-10 Cancel
+									.btn.btn-primary(type=submit) Submit

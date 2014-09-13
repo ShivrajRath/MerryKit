@@ -1,0 +1,95 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			.col-lg-8.col-lg-offset-2
+				.well
+					form.form-horizontal(action='/seller/signup', method='POST')
+						fieldset
+							legend Seller Signup
+							.form-group
+								label.col-lg-2.control-label(for='companyname') Company Name
+								.col-lg-10
+									input#companyname.form-control(type='text', name='companyname' placeholder='Company Name', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='companydisplayname') Company Display Name
+								.col-lg-10
+									input#companydisplayname.form-control(type='text', name='companydisplayname' placeholder='Company Display Name', autocomplete='off')
+							
+							.form-group
+								label.col-lg-2.control-label(for='address1') Address 1
+								.col-lg-10
+									input#address1.form-control(type='text', name='address1' placeholder='Address 1', autocomplete='off')
+							
+							.form-group
+								label.col-lg-2.control-label(for='address2') Address 2
+								.col-lg-10
+									input#address2.form-control(type='text', name='address2' placeholder='Address 2', autocomplete='off')
+							
+							.form-group
+								label.col-lg-2.control-label(for='city') City
+								.col-lg-10
+									input#city.form-control(type='text', name='city' placeholder='City', autocomplete='off')
+							
+							.form-group
+								label.col-lg-2.control-label(for='state') State
+								.col-lg-10
+									input#state.form-control(type='text', name='state' placeholder='State', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='pincode') Pincode
+								.col-lg-10
+									input#pincode.form-control(type='number', name='pincode' placeholder='Pincode', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='landline') Landline No
+								.col-lg-10
+									input#landline.form-control(type='text', name='landline' placeholder='Landline No', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='mobilenumber') Mobile Number
+								.col-lg-10
+									input#mobilenumber.form-control(type='text', name='mobilenumber' placeholder='Mobile Number', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='categories') Categories
+								.col-lg-10
+									input(type='checkbox', name='categories', value='books') 
+									|  Books 
+									br
+									input(type='checkbox', name='categories', value='baby') 
+									|  Products 
+									br
+									input(type='checkbox', name='categories', value='homenkitchen') 
+									|  Home and Kitchen
+									br
+									input(type='checkbox', name='categories', value='electronics') 
+									|  Electronics
+									br
+									input(type='checkbox', name='categories', value='men') 
+									|  Men
+									br
+									input(type='checkbox', name='categories', value='woman') 
+									|  Woman
+									br
+							.form-group
+								label.col-lg-2.control-label(for='firstname') First Name
+								.col-lg-10
+									input#firstname.form-control(type='text', name='firstname' placeholder='First Name', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='lastname') Last Name
+								.col-lg-10
+									input#lastname.form-control(type='text', name='lastname' placeholder='Last Name', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='selleremail') Email
+								.col-lg-10
+									input#selleremail.form-control(type='text', name='selleremail' placeholder='Email', autocomplete='off')
+							.form-group
+								label.col-lg-2.control-label(for='sellerpassword') Password
+								.col-lg-10
+									input#sellerpassword.form-control(type='password', name='sellerpassword' placeholder='Password', autocomplete='off')
+							.form-group
+								.col-lg-10.col-lg-offset-2
+									.btn.btn-default.mr-10 Cancel
+									input.btn.btn-primary(type='submit', value='Submit')
+							p
+							| If you already have an account then 
+							a(href='/seller/login') Login 
+							|  from here.

@@ -1,0 +1,18 @@
+{
+  "name": "MerryKitApp",
+  "version": "0.0.0",
+  "description": "Merry Kit code base",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "@ShivrajRath",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.8.5"
+  }
+}

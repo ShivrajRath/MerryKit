@@ -1,0 +1,18 @@
+{
+    "development": {
+        "port": 5000,
+        "mongooseHost": "mongodb://localhost/merrykit",
+        "errorHandlerOptions": {
+            "dumpExceptions": true,
+            "showStack": true
+        }
+    },
+    "production": {
+        "port": 5000,
+        "mongooseHost": "mongodb://localhost/merrykit",
+        "errorHandlerOptions": {
+            "dumpExceptions": false,
+            "showStack": false
+        }
+    }
+}
