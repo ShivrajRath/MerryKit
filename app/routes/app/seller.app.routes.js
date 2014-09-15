@@ -57,6 +57,29 @@ module.exports = function(router, passport) {
         });
     });
 
+    // Adding a product category
+    router.get('/product/add', isLoggedIn, function(req, res) {
+        res.render('common/views/seller/product/add/add', {
+            title: 'Add a product',
+            categories: {
+                "books": {
+                    "name": "Books"
+                },
+                "homeandkitchen": {
+                    "name": "Home and Kitchen"
+                }
+            }
+        });
+    });
+
+    // Adding a product category
+    router.get('/product/add/:category', isLoggedIn, function(req, res) {
+
+        res.render('common/views/seller/profile', {
+            title: req.params.category
+        });
+    });
+
     router.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
