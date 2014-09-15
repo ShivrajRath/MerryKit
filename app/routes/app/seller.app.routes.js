@@ -7,6 +7,8 @@ authenticated first
 
 // All these routes are prepended with /seller
 
+var mkcomon = require('../../utilities/mkcommon.js');
+
 module.exports = function(router, passport) {
 
     router.use(function(req, res, next) {
@@ -61,14 +63,7 @@ module.exports = function(router, passport) {
     router.get('/product/add', isLoggedIn, function(req, res) {
         res.render('common/views/seller/product/add/add', {
             title: 'Add a product',
-            categories: {
-                "books": {
-                    "name": "Books"
-                },
-                "homeandkitchen": {
-                    "name": "Home and Kitchen"
-                }
-            }
+            categories: mkcomon.getCategories()
         });
     });
 

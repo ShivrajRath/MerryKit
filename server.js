@@ -7,12 +7,12 @@ Description: Creates the server for the app to run
 'use strict';
 
 var express = require('express'),
-    bodyParser = require('body-parser'),
-    passport = require('passport'),
-    flash = require('connect-flash'),
-    mongoose = require("mongoose"),
-    session = require('express-session'),
-    path = require('path');
+  bodyParser = require('body-parser'),
+  passport = require('passport'),
+  flash = require('connect-flash'),
+  mongoose = require("mongoose"),
+  session = require('express-session'),
+  path = require('path');
 
 // Express app
 var app = express();
@@ -27,7 +27,7 @@ Mongoose ORM to connect to mongo db
 *****************************************************************************/
 
 var mongoURI = process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL || config.mongooseHost;
+  process.env.MONGOHQ_URL || config.mongooseHost;
 
 mongoose.connect(mongoURI);
 
@@ -40,9 +40,9 @@ require('./app/setup/seller.passport.js')(passport);
 
 // session secret
 app.use(session({
-    secret: 'kitmerrysashbhpa',
-    saveUninitialized: true,
-    resave: true
+  secret: 'kitmerrysashbhpa',
+  saveUninitialized: true,
+  resave: true
 }));
 app.use(passport.initialize());
 // persistent login sessions
@@ -57,7 +57,7 @@ App middleware
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
-    extended: false
+  extended: false
 }));
 
 
