@@ -9,17 +9,17 @@ which don't need authenticated
 
 module.exports = function(router) {
 
-    router.use(function(req, res, next) {
-        console.log('In App router');
-        console.log('%s %s %s', req.method, req.url, req.path);
-        next();
-    });
+  router.use(function(req, res, next) {
+    console.log('In App router');
+    console.log('%s %s %s', req.method, req.url, req.path);
+    next();
+  });
 
-    // Home page for the site
-    router.get('/', function(req, res) {
-        res.render('default/views/home', {
-            title: 'Merry Kit'
-        });
+  // Home page for the site
+  router.get('/', function(req, res) {
+    res.render('default/views/home', {
+      title: 'Merry Kit'
     });
+  });
 
 }

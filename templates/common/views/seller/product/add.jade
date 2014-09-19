@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  include ../../../includes/angular
+  script(src='/app/ng/modules/addProduct/addProduct.controller.js')
+  .container
+    h1 #{title}
+    div(ng-app='addProduct')
+      div(ng-controller='addProductCtrl')
+        li(ng-repeat='phone in phones')
+          | {{phone.name}}
+          p {{phone.snippet}}

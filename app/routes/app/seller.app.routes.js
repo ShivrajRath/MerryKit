@@ -61,7 +61,7 @@ module.exports = function(router, passport) {
 
   // Adding a product category
   router.get('/product/add', isLoggedIn, function(req, res) {
-    res.render('common/views/seller/product/add/add', {
+    res.render('common/views/seller/product/add', {
       title: 'Add a product',
       categories: mkcomon.getCategories()
     });
