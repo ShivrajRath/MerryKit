@@ -1,0 +1,136 @@
+{
+    "books": {
+        "name": "Books",
+        "cid": "C_1",
+        "sub": {
+            "fiction": {
+                "name": "Fiction",
+                "cid": "C_1.1",
+                "sub": {
+                    "literaturenfiction": {
+                        "name": "Literature and Fiction",
+                        "cid": "C_1.1.1"
+                    },
+                    "indianwriting": {
+                        "name": "Indian Writing",
+                        "cid": "C_1.1.2"
+                    },
+                    "crimeandmystery": {
+                        "name": "Crime and Mystery",
+                        "cid": "C_1.1.3"
+                    },
+                    "romance": {
+                        "name": "Romance",
+                        "cid": "C_1.1.4"
+                    },
+                    "sciencefiction": {
+                        "name": "Science Fiction",
+                        "cid": "C_1.1.5"
+                    }
+                }
+            },
+            "nonfiction": {
+                "name": "Non Fiction",
+                "cid": "C_1.2",
+                "sub": {
+                    "biographies": {
+                        "name": "Biographies",
+                        "cid": "C_1.2.1"
+                    },
+                    "businessneco": {
+                        "name": "Business and economics",
+                        "cid": "C_1.2.2"
+                    },
+                    "selfhelp": {
+                        "name": "Self Help",
+                        "cid": "C_1.2.3"
+                    },
+                    "politics": {
+                        "name": "Politics",
+                        "cid": "C_1.2.4"
+                    },
+                    "travelguides": {
+                        "name": "Travel Guides",
+                        "cid": "C_1.2.5"
+                    },
+                    "sports": {
+                        "name": "Sports",
+                        "cid": "C_1.2.6"
+                    }
+                }
+            },
+            "textbooks": {
+                "name": "Text Books",
+                "cid": "C_1.3",
+                "sub": {
+                    "engineering": {
+                        "name": "Engineering",
+                        "cid": "C_1.3.1"
+                    },
+                    "computerscience": {
+                        "name": "Computer Science",
+                        "cid": "C_1.3.2"
+                    },
+                    "scienceandmath": {
+                        "name": "Science and Match",
+                        "cid": "C_1.3.3"
+                    },
+                    "schooltextbooks": {
+                        "name": "School Textbooks",
+                        "cid": "C_1.3.4"
+                    },
+                    "law": {
+                        "name": "Law",
+                        "cid": "C_1.3.5"
+                    },
+                    "sports": {
+                        "name": "Sports",
+                        "cid": "C_1.3.6"
+                    },
+                    "others": {
+                        "name": "Others",
+                        "cid": "C_1.3.7"
+                    }
+                }
+            },
+            "competetiveexams": {
+                "name": "Competitive Exams",
+                "cid": "C_1.4",
+                "sub": {
+                    "upscmains": {
+                        "name": "UPSC Mains",
+                        "cid": "C_1.4.1"
+                    },
+                    "cat": {
+                        "name": "CAT",
+                        "cid": "C_1.4.2"
+                    },
+                    "iitjee": {
+                        "name": "IIT JEE",
+                        "cid": "C_1.4.3"
+                    },
+                    "ibpspo": {
+                        "name": "IBPS PO",
+                        "cid": "C_1.4.4"
+                    },
+                    "internationalexams": {
+                        "name": "International Exams",
+                        "cid": "C_1.4.5"
+                    },
+                    "ibpsclerical": {
+                        "name": "IBPS Clerical",
+                        "cid": "C_1.4.6"
+                    },
+                    "gate": {
+                        "name": "GATE",
+                        "cid": "C_1.4.7"
+                    }
+                }
+            }
+        }
+    },
+    "homeandkitchen": {
+        "name": "Home and Kitchen",
+        "cid": "c_2"
+    }
+}
