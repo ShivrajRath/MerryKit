@@ -2,11 +2,12 @@ extends ../layout
 
 block content
   include ../../../includes/angular
-  script(src='/app/ng/modules/addProduct/addProduct.controller.js')
+  script(src='/app/ng/modules/addProduct/addProduct.app.js')
+  script(src='/app/ng/modules/addProduct/addProduct.router.js')
+  script(src='/app/ng/modules/addProduct/controllers/addProduct.controller.js')
+  script(src='/app/ng/modules/addProduct/controllers/productForm.controller.js')
+
   .container
     h1 #{title}
     div(ng-app='addProduct')
-      div(ng-controller='addProductCtrl')
-        li(ng-repeat='phone in phones')
-          | {{phone.name}}
-          p {{phone.snippet}}
+      div(ng-view)
