@@ -7,25 +7,25 @@
           <div class="form-group">
             <label class="col-lg-2 control-label">Book Title</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="productName" autocomplete="off" >
+              <input type="text" class="form-control" ng-model="formData.booktitle" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">ISBN 10</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="isbn10" autocomplete="off" >
+              <input type="text" class="form-control" ng-model="formData.isbn10" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">ISBN 13</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="isbn10" autocomplete="off" >
+              <input type="text" class="form-control" ng-model="formData.isbn13" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Format</label>
             <div class="col-lg-10">
-              <select name="format" class="form-control">
+              <select ng-model="formData.format" class="form-control">
                 <option value="">Select</option>
                 <option value="hardcover">Hard Cover</option>
                 <option value="paperback">Paper Back</option>
@@ -36,56 +36,60 @@
           <div class="form-group">
             <label class="col-lg-2 control-label">Publication Year</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="publicationyear" autocomplete="off" >
+              <input type="number" class="form-control" ng-model="formData.publicationyear" ng-minlength="4" ng-maxlength="4" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Edition</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="edition" autocomplete="off" >
+              <input type="text" class="form-control" ng-model="formData.edition" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Images</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="language" autocomplete="off" placeholder="Add image urls, separated by comma" >
+              <input type="text" class="form-control" ng-model="formData.images" autocomplete="off" placeholder="Add image urls, separated by comma">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Condition</label>
             <div class="col-lg-10">
-              <select name="condition" class="form-control">
+              <select ng-model="formData.condition" class="form-control">
                 <option value="">Select</option>
-                <option value="hardcover">New</option>
-                <option value="paperback">Like new</option>
-                <option value="other">Very good</option>
-                <option value="other">Good</option>
-                <option value="other">Acceptable</option>
+                <option value="new">New</option>
+                <option value="likenew">Like new</option>
+                <option value="verygood">Very good</option>
+                <option value="good">Good</option>
+                <option value="acceptable">Acceptable</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">Description</label>
+            <label for="textArea" class="col-lg-2 control-label">Book Description</label>
             <div class="col-lg-10">
-              <textarea class="form-control" rows="3" name="productdescription"></textarea>
+              <textarea class="form-control" rows="3" ng-model="formData.productdescription"></textarea>
               <span class="help-block">Description should be written in markdown. It'll get coverted to HTML on rendering.</span>
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Publisher</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control" name="publisher" autocomplete="off">
+              <input type="text" class="form-control" ng-model="formData.publisher" autocomplete="off">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-2 control-label">Pages</label>
             <div class="col-lg-10">
-              <input type="number" class="form-control" name="pages" autocomplete="off">
+              <input type="number" class="form-control" ng-model="formData.pages" autocomplete="off">
             </div>
           </div>
-          
+
+          <div ng-include="'/app/ng/modules/addProduct/partials/stockandprice.partials.html'"></div>
+
           <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2"><a ng-click="addVariant()" class="btn btn-success mr-10">Add a variant</a><a ng-click="submit()" class="btn btn-primary">Submit</a>
+            <div class="col-lg-10 col-lg-offset-2">
+              <a ng-click="addVariant()" class="btn btn-success mr-10">Add a variant</a>
+              <a ng-click="submit()" class="btn btn-primary">Submit</a>
             </div>
           </div>
         </fieldset>

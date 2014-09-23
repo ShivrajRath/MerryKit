@@ -9,9 +9,14 @@ var lodash = require('lodash');
 
 module.exports = {
   // Returns categories
-  getCategories: function() {
-    var categories = require('../setup/categories.json');
-    console.log(categories);
+  getCategories: function(categoryId) {
+    var categories = {};
+    try {
+      categories = require('../categories/' + categoryId + '.categories.json');
+      return categories;
+    } catch (ex) {
+      console.log('Category Id: "' + categoryId + '" not present');
+    }
     return categories;
   }
 };

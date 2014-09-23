@@ -3,8 +3,7 @@ Merry Kit Software Pvt Limited
 Author: Shivraj Rath
 Description: Routes
 ***********************************************************/
-// Seller  Model
-// Model is an instance for db entry
+// Seller  Schema
 
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
@@ -12,6 +11,7 @@ var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
 var sellerSchema = new Schema({
+  sellerId: String,
   companyname: String,
   companydisplayname: String,
   address1: String,
