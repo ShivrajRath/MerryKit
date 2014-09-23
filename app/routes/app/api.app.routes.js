@@ -26,11 +26,14 @@ module.exports = function(router, passport) {
   });
 
   /**
-   * Posts a product to be saved to database. 
+   * Posts a product to be saved to database.
    * The request should be validated before saving.
    */
   router.post('/addProduct/:productType', isLoggedIn, function(req, res) {
-    
+    var productType = req.params.productType;
+    var data = req.body.formData;
+
+    console.log(data);
   });
 }
 
