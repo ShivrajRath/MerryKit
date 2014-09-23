@@ -1,2 +1,2 @@
 //App
-var addProductApp = angular.module('addProduct', ['ng', 'ngRoute']);
+var addProductApp = angular.module('addProduct', ['ng', 'ngRoute', 'services']);

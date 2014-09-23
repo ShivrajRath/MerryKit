@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 
 var bookSchema = new Schema({
   productId: String,
-  categoryId: String,
+  categoryName: String,
   itemId: String,
   booktitle: String,
   isbn10: String,

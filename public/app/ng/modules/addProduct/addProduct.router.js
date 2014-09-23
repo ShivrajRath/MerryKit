@@ -5,7 +5,7 @@ addProductApp.config(['$routeProvider',
     when('/addCategory', {
       templateUrl: '/app/ng/modules/addProduct/partials/addCategory.partials.html',
       controller: 'addProductCtrl'
-    }).when('/books', {
+    }).when('/books/:categoryName', {
       templateUrl: '/app/ng/modules/addProduct/partials/books.partials.html',
       controller: 'productFormCtrl'
     }).

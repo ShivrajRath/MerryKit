@@ -32,7 +32,6 @@ module.exports = function(router, passport) {
   router.post('/addProduct/:productType', isLoggedIn, function(req, res) {
     var productType = req.params.productType;
     var data = req.body.formData;
-
     console.log(data);
   });
 }

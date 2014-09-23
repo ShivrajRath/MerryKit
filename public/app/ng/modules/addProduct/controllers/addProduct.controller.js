@@ -1,6 +1,6 @@
 // Controller to add a product
-addProductApp.controller('addProductCtrl', ['$scope',
-  function($scope) {
+addProductApp.controller('addProductCtrl', ['$scope', 'categoryService',
+  function($scope, categoryService) {
 
     // Adds heirarchical categories in this array
     $scope.categoriesArr = [];
@@ -29,68 +29,25 @@ addProductApp.controller('addProductCtrl', ['$scope',
     // It clears the next item in array and puts proper item instead
     $scope.categoryChange = function(index, key) {
       if (key) {
+
+        // This creates the URL for the next partial, 
+        // the category Param carries the category name
         if (index === 0) {
           $scope.nextHash = "#" + key;
+        } else {
+          $scope.categoryParam = key;
         }
+
         $scope.clearCategory(index + 1);
         $scope.addToCategoryArr($scope.categoriesArr[index][key]);
       } else {
         $scope.nextActive = false;
+        $scope.clearCategory(index + 1);
       }
     };
 
-    // Scope watch
-
-    // $scope.$watch('secondCategory',)
-
-    var categories = {
-      "books": {
-        "name": "Books",
-        "cid": "C_1",
-        "sub": {
-          "fiction": {
-            "name": "Fiction",
-            "cid": "C_1.1",
-            "sub": {
-              "literaturenfiction": {
-                "name": "Literature and Fiction",
-                "cid": "C_1.1.1"
-              },
-              "indianwriting": {
-                "name": "Indian Writing",
-                "cid": "C_1.1.2"
-              }
-            }
-          },
-          "nonfiction": {
-            "name": "Non Fiction",
-            "cid": "C_1.2",
-            "sub": {
-              "biographies": {
-                "name": "Biographies",
-                "cid": "C_1.2.1"
-              },
-              "businessneco": {
-                "name": "Business and economics",
-                "cid": "C_1.2.2"
-              }
-            }
-          },
-          "textbooks": {
-            "name": "Text Books",
-            "cid": "C_1.3"
-          },
-          "studyaids": {
-            "name": "Study Aids",
-            "cid": "C_1.4"
-          }
-        }
-      },
-      "homeandkitchen": {
-        "name": "Home and Kitchen",
-        "cid": "c_2"
-      }
-    }
+    // Get all categories
+    var categories = categoryService.query();
 
     $scope.categoriesArr.push(categories);
   }
