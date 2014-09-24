@@ -31,8 +31,16 @@ module.exports = function(router, passport) {
    */
   router.post('/addProduct/:productType', isLoggedIn, function(req, res) {
     var productType = req.params.productType;
-    var data = req.body.formData;
-    console.log(data);
+    var formData = req.body.formData;
+    var productType = req.body.productType;
+
+    console.log(productType);
+    // Return res as success or failure and redirect to a success or failure page
+
+    res.json({
+      result: 'success'
+    });
+
   });
 }
 

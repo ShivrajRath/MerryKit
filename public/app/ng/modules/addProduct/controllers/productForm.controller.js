@@ -9,17 +9,20 @@ addProductApp.controller('productFormCtrl', ['$scope', '$routeParams', 'productU
 
     $scope.categoryName = $routeParams.categoryName;
 
-    $scope.submit = function() {
+    $scope.submit = function(productType) {
+
+      var self = this;
 
       this.formData['categoryname'] = $scope.categoryName;
-
-      // productUploadService.post({
-      //   this.formData
-      // }, function(data, err) {
-      //   console.log(data);
-      // });
-
       console.log(this.formData);
+
+      productUploadService.save({
+        formData: self.formData,
+        productType: productType
+      }, function(resData) {
+        console.log(resData)
+      })
+
     }
   }
 ]);

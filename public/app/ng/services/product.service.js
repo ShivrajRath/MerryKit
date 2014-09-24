@@ -16,10 +16,10 @@ services.factory('categoryService', ['$resource',
 services.factory('productUploadService', ['$resource',
   function($resource) {
     return $resource('/api/addProduct/:productType', {}, {
-      query: {
+      save: {
         method: 'POST',
         params: {
-          productType: 'books' //change this
+          productType: 'all'
         }
       }
     })
