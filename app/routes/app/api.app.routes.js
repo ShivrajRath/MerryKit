@@ -7,7 +7,8 @@ authenticated first
 
 // All these routes are prepended with /seller
 
-var mkcommon = require('../../utilities/mkcommon.js');
+var mkcommon = require('../../utilities/mkcommon');
+var productapi = require('../../api/product.api');
 
 module.exports = function(router, passport) {
 
@@ -34,18 +35,25 @@ module.exports = function(router, passport) {
     var formData = req.body.formData;
     var productType = req.body.productType;
 
-    console.log(productType);
-    // Return res as success or failure and redirect to a success or failure page
-
-    res.json({
-      result: 'success'
-    });
-
+    productapi.addProduct(formData, productType, function(err, data) {
+      if (err) {
+        res.render('common/views/seller/message', {
+          title: 'Add product error',
+          message: err.message
+        });
+        console.log(err.stack);
+      } else {
+        res.render('common/views/seller/message', {
+          title: 'Add product success',
+          message: 'Product added successfully!! It\'ll reflect to users soon'
+        });
+      }
+    })
   });
 }
 
 
-// route middleware to make sure
+// route middleware to make sure user is logged in
 function isLoggedIn(req, res, next) {
 
   // if user is authenticated in the session, carry on
