@@ -38,7 +38,18 @@ exports.warn = new(Winston.Logger)({
       filename: 'logs/warn.log'
     })
   ]
-}).warn
+}).warn;
+
+exports.debug = new(Winston.Logger)({
+  transports: [
+    new(Winston.transports.Console)({
+      colorize: true
+    }),
+    new(Winston.transports.File)({
+      filename: 'logs/debug.log'
+    })
+  ]
+}).debug;
 
 
 /**

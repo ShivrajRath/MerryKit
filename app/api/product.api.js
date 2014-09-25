@@ -10,6 +10,8 @@ var Order = require('../models/order.schema');
 var Price = require('../models/price.schema');
 var Stock = require('../models/stock.schema');
 var SellerProduct = require('../models/sellerproduct.schema');
+var log = require('../utilities/log');
+
 
 module.exports = {
   addProduct: function(formData, productType, callback) {
@@ -17,12 +19,14 @@ module.exports = {
       case "books":
         this.addBook(formData, callback)
       default:
+        log.info('productType ' + productType + ' was not found');
         callback(new Error('productType was not found'));
     }
   },
 
   addBook: function(formData, callback) {
-    
+    log.debug("In add book: " + formData);
+    // Update the 
   },
 
   addStockItem: function() {
@@ -30,6 +34,10 @@ module.exports = {
   },
 
   addPriceItem: function() {
+
+  },
+
+  addSellerProductItem: function() {
 
   }
 }

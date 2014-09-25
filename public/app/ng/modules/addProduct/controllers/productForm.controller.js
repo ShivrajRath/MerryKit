@@ -13,16 +13,22 @@ addProductApp.controller('productFormCtrl', ['$scope', '$routeParams', 'productU
 
       var self = this;
 
+      // Add category name to the form. This will be persisted to product db
       this.formData['categoryname'] = $scope.categoryName;
-      console.log(this.formData);
 
-      productUploadService.save({
+      var params = {
         formData: self.formData,
         productType: productType
-      }, function(resData) {
-        console.log(resData)
-      })
+      };
 
+      // Post the product data to the service.
+      productUploadService.save(params).$promise.then(function(data) {
+        $scope.modalMessage = 'Product added successfully !!';
+        $('#msgModal').modal('show');
+      }, function(err) {
+        $scope.modalMessage = 'Error in data provided. Please try again !!';
+        $('#msgModal').modal('show');
+      });
     }
   }
 ]);

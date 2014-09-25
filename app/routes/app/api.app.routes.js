@@ -31,21 +31,32 @@ module.exports = function(router, passport) {
    * The request should be validated before saving.
    */
   router.post('/addProduct/:productType', isLoggedIn, function(req, res) {
+    // res.render('common/views/seller/message', {
+    //   title: 'Add product error',
+    //   message: 'err.message'
+    // });
+
     var productType = req.params.productType;
     var formData = req.body.formData;
     var productType = req.body.productType;
 
     productapi.addProduct(formData, productType, function(err, data) {
       if (err) {
-        res.render('common/views/seller/message', {
-          title: 'Add product error',
-          message: err.message
+        // res.render('common/views/seller/message', {
+        //   title: 'Add product error',
+        //   message: err.message
+        // });
+
+        res.status(400).json({
+          'error': 'err.message'
         });
-        console.log(err.stack);
       } else {
-        res.render('common/views/seller/message', {
-          title: 'Add product success',
-          message: 'Product added successfully!! It\'ll reflect to users soon'
+        // res.render('common/views/seller/message', {
+        //   title: 'Add product success',
+        //   message: 'Product added successfully!! It\'ll reflect to users soon'
+        // });
+        res.json({
+          'success': 'success'
         });
       }
     })
