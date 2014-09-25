@@ -9,7 +9,7 @@ var Book = require('../models/book.schema');
 var Order = require('../models/order.schema');
 var Price = require('../models/price.schema');
 var Stock = require('../models/stock.schema');
-var SellerProduct = require('../models/sellerproducts.schema');
+var SellerProduct = require('../models/sellerproduct.schema');
 
 module.exports = {
   addProduct: function(formData, productType, callback) {

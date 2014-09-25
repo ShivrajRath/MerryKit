@@ -13,4 +13,4 @@ var sellerProductSchema = new Schema({
   itemId: String
 });
 
-module.exports = mongoose.model('SellerProduct', sellerProducSchema);
+module.exports = mongoose.model('SellerProduct', sellerProductSchema);

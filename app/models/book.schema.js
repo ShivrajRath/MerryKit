@@ -20,7 +20,10 @@ var bookSchema = new Schema({
   condition: String,
   productdescription: String,
   publisher: String,
-  pages: String
+  pages: String,
+  tags: Array,
+  images: Array,
+  genre: Array
 });
 
 module.exports = mongoose.model('Book', bookSchema);

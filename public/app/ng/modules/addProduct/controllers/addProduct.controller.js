@@ -34,6 +34,7 @@ addProductApp.controller('addProductCtrl', ['$scope', 'categoryService',
         // the category Param carries the category name
         if (index === 0) {
           $scope.nextHash = "#" + key;
+          $scope.categoryParam = “”;
         } else {
           $scope.categoryParam = key;
         }
@@ -46,8 +47,9 @@ addProductApp.controller('addProductCtrl', ['$scope', 'categoryService',
       }
     };
 
-    // Get all categories
-    var categories = categoryService.query();
+    categoryService.query().$promise.then(function(result) {
+      $scope.categoriesArr.push(result);
+    });
 
     $scope.categoriesArr.push(categories);
   }

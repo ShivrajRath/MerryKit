@@ -12,7 +12,8 @@ var express = require('express'),
   flash = require('connect-flash'),
   mongoose = require("mongoose"),
   session = require('express-session'),
-  path = require('path');
+  path = require('path'),
+  log = require('./app/utilities/log');
 
 // Express app
 var app = express();
@@ -85,4 +86,4 @@ Starting the server
 
 var port = process.env.PORT || config.port;
 app.listen(port);
-console.log('Application started on port: ' + port);
+log.info('Application started on port: ' + port);
