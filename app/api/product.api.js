@@ -39,5 +39,21 @@ module.exports = {
 
   addSellerProductItem: function() {
 
+  },
+
+  create: function() {
+
+  },
+
+  add: function() {
+
+  },
+
+  update: function() {
+
+  },
+
+  delete: function() {
+
   }
 }

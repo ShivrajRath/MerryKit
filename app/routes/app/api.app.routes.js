@@ -7,14 +7,15 @@ authenticated first
 
 // All these routes are prepended with /seller
 
+var log = require('../../utilities/log');
 var mkcommon = require('../../utilities/mkcommon');
 var productapi = require('../../api/product.api');
 
 module.exports = function(router, passport) {
 
   router.use(function(req, res, next) {
-    console.log('In API router');
-    console.log('%s %s %s', req.method, req.url, req.path);
+    log.info('In API router');
+    log.info('%s %s %s', req.method, req.url, req.path);
     next();
   });
 

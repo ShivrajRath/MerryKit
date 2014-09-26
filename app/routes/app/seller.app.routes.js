@@ -8,12 +8,13 @@ authenticated first
 // All these routes are prepended with /seller
 
 var mkcomon = require('../../utilities/mkcommon.js');
+var log = require('../../utilities/log');
 
 module.exports = function(router, passport) {
 
   router.use(function(req, res, next) {
-    console.log('In Seller router');
-    console.log('%s %s %s', req.method, req.url, req.path);
+    log.info('In Seller router');
+    log.info('%s %s %s', req.method, req.url, req.path);
 
     next();
   });

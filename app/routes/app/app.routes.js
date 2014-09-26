@@ -7,11 +7,13 @@ which don't need authenticated
 
 // expose the routes to our app with modules.exports
 
+var log = require('../../utilities/log')
+
 module.exports = function(router) {
 
   router.use(function(req, res, next) {
-    console.log('In App router');
-    console.log('%s %s %s', req.method, req.url, req.path);
+    log.info('In App router');
+    log.info('%s %s %s', req.method, req.url, req.path);
     next();
   });
 

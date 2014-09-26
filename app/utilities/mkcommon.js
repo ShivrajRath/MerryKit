@@ -15,7 +15,7 @@ module.exports = {
       categories = require('../categories/' + categoryId + '.categories.json');
       return categories;
     } catch (ex) {
-      console.log('Category Id: "' + categoryId + '" not present');
+      log.info('Category Id: "' + categoryId + '" not present');
     }
     return categories;
   }
