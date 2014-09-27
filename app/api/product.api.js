@@ -15,11 +15,14 @@ var log = require('../utilities/log');
 
 module.exports = {
   addProduct: function(formData, productType, callback) {
+    log.info('productType ' + productType + ' to be added');
+    log.info('*** formData *** ' + JSON.stringify(formData));
     switch (productType) {
       case "books":
-        this.addBook(formData, callback)
+        this.addBook(formData, callback);
+        break;
       default:
-        log.info('productType ' + productType + ' was not found');
+        log.warn('productType ' + productType + ' was not found');
         callback(new Error('productType was not found'));
     }
   },

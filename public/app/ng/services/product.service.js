@@ -13,14 +13,13 @@ services.factory('categoryService', ['$resource',
   }
 ]);
 
-services.factory('productUploadService', ['$resource',
+services.factory('ProductUploadService', ['$resource',
   function($resource) {
-    return $resource('/api/addProduct/:productType', {}, {
+    return $resource('/api/addProduct/:product_type', {
+      product_type: "@productType"
+    }, {
       save: {
-        method: 'POST',
-        params: {
-          productType: 'all'
-        }
+        method: 'POST'
       }
     })
   }

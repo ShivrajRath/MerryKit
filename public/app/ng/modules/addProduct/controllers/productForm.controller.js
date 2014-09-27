@@ -4,8 +4,8 @@ Author: Shivraj Rath
 Description: Product Form Controller. 
 ***********************************************************/
 
-addProductApp.controller('productFormCtrl', ['$scope', '$routeParams', 'productUploadService',
-  function($scope, $routeParams, productUploadService) {
+addProductApp.controller('productFormCtrl', ['$scope', '$routeParams', 'ProductUploadService',
+  function($scope, $routeParams, ProductUploadService) {
 
     $scope.categoryName = $routeParams.categoryName;
 
@@ -13,21 +13,24 @@ addProductApp.controller('productFormCtrl', ['$scope', '$routeParams', 'productU
 
       var self = this;
 
+      if(!this.formData){
+        this.formData = [];
+      }
+
       // Add category name to the form. This will be persisted to product db
       this.formData['categoryname'] = $scope.categoryName;
 
       var params = {
         formData: self.formData,
-        productType: productType
+        product_type: productType
       };
 
-      // Post the product data to the service.
-      productUploadService.save(params).$promise.then(function(data) {
-        $scope.modalMessage = 'Product added successfully !!';
-        $('#msgModal').modal('show');
-      }, function(err) {
-        $scope.modalMessage = 'Error in data provided. Please try again !!';
-        $('#msgModal').modal('show');
+      var product = new ProductUploadService();
+      product.formData = self.formData;
+      product.productType = productType;
+
+      product.$save({}, function(data){
+        console.log(data);
       });
     }
   }
